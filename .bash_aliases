@@ -5,7 +5,7 @@ alias servedir='python -m SimpleHTTPServer'
 alias c="clear"
 alias chx='chmod 755'
 # Alert for long running commands. Usage: sleep 10; alert
- alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Tar
 extract() { 
@@ -67,23 +67,30 @@ alias myip='curl ifconfig.me/ip'
 alias netstat='netstat -tulpena'
 alias tcpick='tcpick -i any -yP -C'
 
+source /etc/bash_completion.d/git-prompt
 # Git
-alias gita='git add -A'
-alias gitac='gita && git commit'
-alias gitam='gita && git commit --amend --no-edit'
-alias gitf='git fetch -p'
-alias gitr='git rebase'
-alias gitro='git rebase origin'
-alias gitrc='git rebase --continue'
-alias gitrs='git rebase --skip'
-alias gitp='git push origin'
-alias gitpdel='git push --delete origin'
-alias gitbdel='git branch -D'
-alias gits='git status'
-alias gitd='git diff'
-alias gitc='git checkout'
-alias gitl='git lol'
-alias gitla='git lola'
+alias ga='git add -A :/'
+alias gc='gita && git commit'
+alias gca='gita && git commit --amend --no-edit'
+alias gf='git fetch -p'
+alias gr='git rebase'
+__git_complete gr _git_rebase
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
+alias gp='git push'
+__git_complete gp _git_push
+alias gpdel='git push --delete'
+__git_complete gpdel _git_push
+alias gbdel='git branch -D'
+__git_complete gbdel _git_branch
+alias gs='git status'
+__git_complete gs _git_status
+alias gd='git diff'
+__git_complete gd _git_diff
+alias go='git checkout'
+__git_complete go _git_checkout
+alias gl='git lol'
+alias gla='git lola'
 
 # Docker
 alias docker-rmall='docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi $(docker images -q)'
