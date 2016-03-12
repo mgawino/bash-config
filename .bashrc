@@ -41,4 +41,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
+    GIT_PROMPT_ONLY_IN_REPO=1
+fi
+
 export EDITOR=vim

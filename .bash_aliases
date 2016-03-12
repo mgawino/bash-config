@@ -70,8 +70,8 @@ alias tcpick='tcpick -i any -yP -C'
 source /etc/bash_completion.d/git-prompt
 # Git
 alias ga='git add -A :/'
-alias gc='gita && git commit'
-alias gca='gita && git commit --amend --no-edit'
+alias gc='git add -A :/ && git commit'
+alias gca='git add -A :/ && git commit --amend --no-edit'
 alias gf='git fetch -p'
 alias gr='git rebase'
 __git_complete gr _git_rebase
