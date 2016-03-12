@@ -11,3 +11,7 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+
+if [ -f ~/.profile_vars ]; then
+    source ~/.profile_vars
+fi
