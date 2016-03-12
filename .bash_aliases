@@ -1,11 +1,23 @@
 # General
-alias sudo='sudo '
 alias rm='trash'
 alias servedir='python -m SimpleHTTPServer'
 alias c="clear"
-alias chx='chmod 755'
 # Alert for long running commands. Usage: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# File manipulation
+alias chx='chmod 755'
+replace() {
+    if [ "$#" -ne 3 ]; then
+        echo "Usage: replace [pattern] [value] [file]"
+        return 1
+    fi
+    if [ ! -f "$3" ]; then
+        echo "File $3 not exists!"
+        return 1
+    fi
+    sed -i -e "s/$1/$2/g" "$3"
+}
 
 # Tar
 extract() { 
@@ -67,7 +79,6 @@ alias myip='curl ifconfig.me/ip'
 alias netstat='netstat -tulpena'
 alias tcpick='tcpick -i any -yP -C'
 
-source /etc/bash_completion.d/git-prompt
 # Git
 alias ga='git add -A :/'
 alias gc='git add -A :/ && git commit'
