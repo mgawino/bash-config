@@ -89,6 +89,8 @@ alias gd='git diff'
 __git_complete gd _git_diff
 alias go='git checkout'
 __git_complete go _git_checkout
+alias gm='git merge --no-ff'
+__git_complete gm _git_merge
 alias gl='git lol'
 alias gla='git lola'
 
