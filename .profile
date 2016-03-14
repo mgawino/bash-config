@@ -15,3 +15,7 @@ fi
 if [ -f ~/.profile_vars ]; then
     source ~/.profile_vars
 fi
+
+if [ -f ~/.custom_aliases ]; then
+    source ~/.custom_aliases
+fi

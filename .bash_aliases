@@ -4,6 +4,14 @@ alias servedir='python -m SimpleHTTPServer'
 alias c="clear"
 # Alert for long running commands. Usage: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+addalias() {
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: addalias alias_name alias_value"
+        return 1
+    fi
+    echo "alias $1=\"$2\"" >> ~/.custom_aliases
+    source ~/.profile
+}
 
 # File manipulation
 alias chx='chmod 755'
@@ -82,6 +90,7 @@ alias tcpick='tcpick -i any -yP -C'
 # Git
 alias ga='git add -A :/'
 alias gc='git add -A :/ && git commit'
+__git_complete gc _git_commit
 alias gca='git add -A :/ && git commit --amend --no-edit'
 alias gf='git fetch -p'
 alias gr='git rebase'
@@ -104,6 +113,10 @@ alias gm='git merge --no-ff'
 __git_complete gm _git_merge
 alias gl='git lol'
 alias gla='git lola'
+alias gt='git tag'
+__git_complete gt _git_tag
+alias gpl='git pull --ff-only'
+__git_complete gpl _git_pull
 
 # Docker
 alias docker-rmall='docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi $(docker images -q)'
