@@ -9,7 +9,7 @@ addalias() {
         echo "Usage: addalias alias_name alias_value"
         return 1
     fi
-    echo "alias $1=\"$2\"" >> ~/.custom_aliases
+    echo "alias $1=\"$2\"" >> ~/.custom_settings
     source ~/.profile
 }
 

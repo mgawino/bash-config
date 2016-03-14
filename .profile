@@ -12,10 +12,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -f ~/.profile_vars ]; then
-    source ~/.profile_vars
-fi
+export EDITOR=vim
 
-if [ -f ~/.custom_aliases ]; then
-    source ~/.custom_aliases
+if [ -f ~/.custom_settings ]; then
+    source ~/.custom_settings
 fi
