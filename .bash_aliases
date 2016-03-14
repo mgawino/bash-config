@@ -1,5 +1,4 @@
 # General
-alias rm='trash'
 alias servedir='python -m SimpleHTTPServer'
 alias c="clear"
 # Alert for long running commands. Usage: sleep 10; alert
