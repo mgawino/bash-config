@@ -45,3 +45,7 @@ if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     source ~/.bash-git-prompt/gitprompt.sh
     GIT_PROMPT_ONLY_IN_REPO=1
 fi
+
+if [ -f ~/.custom_bashrc ]; then
+    source ~/.custom_bashrc
+fi

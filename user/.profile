@@ -14,6 +14,6 @@ fi
 
 export EDITOR=vim
 
-if [ -f ~/.custom_settings ]; then
-    source ~/.custom_settings
+if [ -f ~/.custom_profile ]; then
+    source ~/.custom_profile
 fi
