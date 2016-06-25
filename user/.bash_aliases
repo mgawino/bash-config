@@ -1,15 +1,20 @@
 # General
 alias servedir='python -m SimpleHTTPServer'
 alias c="clear"
+
 # Alert for long running commands. Usage: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-addalias() {
-    if [ "$#" -ne 2 ]; then
-        echo "Usage: addalias alias_name alias_value"
-        return 1
+
+addbin() {
+    if [ "$#" -ne 1 ]; then
+        error "Usage: addbin executable"
+    else
+        source=`realpath $1`
+        filename=`basename $source`
+        target="/usr/bin/$filename"
+        info "Creating symbolic link $target -> $source"
+        sudo ln -s $source $target
     fi
-    echo "alias $1=\"$2\"" >> ~/.custom_settings
-    source ~/.profile
 }
 
 # File manipulation

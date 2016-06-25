@@ -2,18 +2,7 @@
 
 set -e
 
-error() {
-    red=`tput setaf 1`
-    reset=`tput sgr0`
-    echo "${red}$1${reset}"
-    exit 1
-}
-
-info() {
-    green=`tput setaf 2`
-    reset=`tput sgr0`
-    echo "${green}$1${reset}"
-}
+source user/.utils
 
 download() {
     cmd="$1"
@@ -51,3 +40,8 @@ rsync -av --progress programs/ ~
 info "Creating custom files (.custom_bashrc, .custom_profile)..."
 touch ~/.custom_bashrc
 touch ~/.custom_profile
+info "Refreshing .profile..."
+source ~/.profile
+
+info "Installing dependencies..."
+sudo apt-get install realpath vim

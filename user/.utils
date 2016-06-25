@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+error() {
+    red=`tput setaf 1
+    reset=`tput sgr0
+    echo "${red}$1${reset}"
+    exit 1
+}
+
+info() {
+    green=`tput setaf 2`
+    reset=`tput sgr0`
+    echo "${green}$1${reset}"
+}
