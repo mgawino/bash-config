@@ -72,7 +72,7 @@ alias fgrep='fgrep --color=auto'
 
 # Mount
 # Mount a temporary ram partition
-alias mountram='mount -t tmpfs tmpfs /mnt -o size=1024m'
+alias mountram='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 
 # Processes
 alias psmem='ps auxf | sort -nr -k 4'
@@ -90,7 +90,7 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 # Network
 alias myip='curl ifconfig.me/ip'
 alias netstat='netstat -tulpena'
-alias tcpick='tcpick -i any -yP -C'
+alias tcpick='sudo tcpick -i any -yP -C'
 
 # Git
 alias ga='git add -A :/'
