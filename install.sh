@@ -44,4 +44,4 @@ info "Refreshing .profile..."
 source ~/.profile
 
 info "Installing dependencies..."
-sudo apt-get install realpath vim
+sudo apt-get install realpath vim ipython

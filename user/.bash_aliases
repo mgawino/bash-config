@@ -1,5 +1,6 @@
 # General
 alias servedir='python -m SimpleHTTPServer'
+alias python='ipython'
 alias c="clear"
 
 # Alert for long running commands. Usage: sleep 10; alert
