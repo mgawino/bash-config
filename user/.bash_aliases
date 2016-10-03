@@ -1,7 +1,16 @@
+source $HOME/.utils
+
 # General
 alias servedir='python -m SimpleHTTPServer'
 alias python='ipython'
 alias c="clear"
+detach() {
+    if [ "$#" -ne 1 ]; then
+        error "Usage: detach executable"
+    else
+        nohup $1 >& /dev/null &
+    fi
+}
 
 # Alert for long running commands. Usage: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

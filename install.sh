@@ -45,3 +45,6 @@ source ~/.profile
 
 info "Installing dependencies..."
 sudo apt-get install realpath vim ipython
+
+info "Installing programs..."
+sudo apt-get install xpad  # sticky notes on desktop
