@@ -2,7 +2,6 @@ source $HOME/.utils
 
 # General
 alias servedir='python -m SimpleHTTPServer'
-alias python='ipython'
 alias c="clear"
 detach() {
     if [ "$#" -ne 1 ]; then
