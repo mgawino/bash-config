@@ -35,7 +35,7 @@ info "Copying user config files..."
 rsync -av --progress user/ ~
 
 info "Copying programs config files..."
-rsync -av --progress programs/ ~
+rsync -av --progress program_configs/ ~
 
 info "Creating custom files (.custom_bashrc, .custom_profile)..."
 touch ~/.custom_bashrc
