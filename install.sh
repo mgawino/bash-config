@@ -14,7 +14,7 @@ download() {
     $cmd $file
 }
 
-git_version=`git --version | rev | cut -d " " -f 1`
+git_version=`git --version | cut -d " " -f 3`
 
 if [[ "${git_version}" < "1.9.1" ]]
 then

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 error() {
-    red=`tput setaf 1
-    reset=`tput sgr0
+    red=`tput setaf 1`
+    reset=`tput sgr0`
     echo "${red}$1${reset}"
     return 42
 }
